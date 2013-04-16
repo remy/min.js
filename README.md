@@ -44,7 +44,7 @@ Also when a single element is matched, you have access to it:
 
 # Thanks
 
-Inspired by Andrew Lunny's [slide](http://youtu.be/ssR7SKJfcG4?t=20m14s).
+Inspired by [Andrew Lunny](http://github.com/alunny)'s [slide](http://youtu.be/ssR7SKJfcG4?t=20m14s).
 
 # License
 
