@@ -42,6 +42,10 @@ Also when a single element is matched, you have access to it:
 * Doesn't fail gracefully like jQuery, if you select something that doesn't return, you won't be able to chain.
 * Trigger doesn't chain. Maybe it should...
 
+# Thanks
+
+Inspired by Andrew Lunny's [slide](http://youtu.be/ssR7SKJfcG4?t=20m14s).
+
 # License
 
 MIT / http://rem.mit-license.org
