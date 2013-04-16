@@ -23,6 +23,7 @@
     event.initEvent(type, true, true);
     event.data = data || {};
     event.eventName = type;
+    event.target = this;
     this.dispatchEvent(event);
     return this;
   };

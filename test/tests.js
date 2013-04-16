@@ -16,12 +16,13 @@ test( 'empty selectors can chain', 1, function() {
   ok($empty.on, '$empty can chain');
 });
 
-test( 'delegation', 1, function() {
+test( 'delegation', 2, function() {
   var $el = $('#qunit-fixture'),
       $a = $('#foo-link');
 
-  $el.on('click', function() {
+  $el.on('click', function(event) {
     ok(true, 'body was clicked and caught via delegation!');
+    ok(event.target === $a, 'target was the link');
   });
 
   $a.trigger('click');
