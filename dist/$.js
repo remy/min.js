@@ -7,7 +7,7 @@
   nodeList.forEach = forEach;
 
   element.on = function (event, fn) {
-    element.addEventListener(event, fn, false);
+    this.addEventListener(event, fn, false);
     return this;
   };
 
@@ -35,7 +35,7 @@
   };
 
   global.$ = function (s) {
-    var r = document.querySelectorAll(s),
+    var r = document.querySelectorAll(s || '☺'),
         length = r.length;
     return length == 1 ? r[0] : !length ? nodeList : r;
   };
