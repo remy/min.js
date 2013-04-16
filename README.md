@@ -23,7 +23,7 @@ Note: the `on` and `trigger` methods are on both `Element` objects and `NodeList
 
     $('a:first-child').trigger('foo');
 
-## Looping 
+## Looping
 
     $('p').forEach(function (el) {
       console.log(el.innerHTML);
@@ -37,10 +37,9 @@ Also when a single element is matched, you have access to it:
 
     $('a').href = '/some-place.html';
 
-# Gotchas
+## Silent failing
 
-* Doesn't fail gracefully like jQuery, if you select something that doesn't return, you won't be able to chain.
-* Trigger doesn't chain. Maybe it should...
+Like jQuery, this tiny library silently fails when it doesn't match any elements. As you might expect.
 
 # Thanks
 

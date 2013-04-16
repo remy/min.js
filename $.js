@@ -1,38 +1,42 @@
-$ = function (document) {
+/*globals Element:true, NodeList:true*/
+(function (global, document) {
   var element = Element.prototype,
       nodeList = NodeList.prototype,
-      foreach = [].forEach;
+      forEach = [].forEach;
 
-  element.on = function () {
-    element.addEventListener.apply(this, arguments);
+  nodeList.forEach = forEach;
+
+  element.on = function (event, fn) {
+    element.addEventListener(event, fn, false);
     return this;
   };
-  
+
   nodeList.on = function (event, fn) {
     forEach.call(this, function (el) {
-      el.on(event, fn, false);
+      el.on(event, fn);
     });
     return this;
   };
-  
+
   element.trigger = function (type, data) {
     var event = document.createEvent('HTMLEvents');
     event.initEvent(type, true, true);
     event.data = data || {};
     event.eventName = type;
     this.dispatchEvent(event);
+    return this;
   };
-  
+
   nodeList.trigger = function (event) {
     forEach.call(this, function (el) {
       el.trigger(event);
     });
+    return this;
   };
 
-  nodeList.forEach = forEach;
-    
-  return function (s) {
-    var r = document.querySelectorAll(s);
-    return r.length == 1 ? r[0] : r;
+  global.$ = function (s) {
+    var r = document.querySelectorAll(s),
+        length = r.length;
+    return length == 1 ? r[0] : !length ? nodeList : r;
   };
-}(document);
+})(this, document);
