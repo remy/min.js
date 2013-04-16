@@ -1,0 +1,16 @@
+{
+  "name": "min.js",
+  "version": "0.0.1",
+  "author": "Remy Sharp",
+  "dependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-uglify": "~0.1.2",
+    "grunt-contrib-concat": "~0.1.3"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://rem.mit-license.org"
+    }
+  ]
+}
