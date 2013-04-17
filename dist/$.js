@@ -5,7 +5,7 @@ $ = (function (document, $) {
       forEach = 'forEach',
       trigger = 'trigger',
       each = [][forEach],
-      dummy;
+      dummy = document.createElement();
 
   nodeList[forEach] = each;
 
@@ -44,7 +44,6 @@ $ = (function (document, $) {
     return length == 1 ? r[0] : !length ? nodeList : r;
   };
 
-  dummy = $(':root');
   $.on = element.on.bind(dummy);
   $.trigger = element[trigger].bind(dummy);
 
