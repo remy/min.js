@@ -1,11 +1,13 @@
 /*globals Element:true, NodeList:true*/
-(function (global, document) {
+$ = (function (document, $) {
   var element = Element.prototype,
       nodeList = NodeList.prototype,
-      forEach = [].forEach,
-      dummy = document.createElement();
+      forEach = 'forEach',
+      trigger = 'trigger',
+      each = [][forEach],
+      dummy;
 
-  nodeList.forEach = forEach;
+  nodeList[forEach] = each;
 
   element.on = function (event, fn) {
     this.addEventListener(event, fn, false);
@@ -13,7 +15,7 @@
   };
 
   nodeList.on = function (event, fn) {
-    forEach.call(this, function (el) {
+    each.call(this, function (el) {
       el.on(event, fn);
     });
     return this;
@@ -30,23 +32,21 @@
   };
 
   nodeList.trigger = function (event) {
-    forEach.call(this, function (el) {
-      el.trigger(event);
+    each.call(this, function (el) {
+      el[trigger](event);
     });
     return this;
   };
 
-  global.$ = function (s) {
+  $ = function (s) {
     var r = document.querySelectorAll(s || '☺'),
         length = r.length;
     return length == 1 ? r[0] : !length ? nodeList : r;
   };
 
-  global.$.on = function (event, fn) {
-    return element.on.call(dummy, event, fn);
-  };
+  dummy = $(':root');
+  $.on = element.on.bind(dummy);
+  $.trigger = element[trigger].bind(dummy);
 
-  global.$.trigger = function (event) {
-    return element.trigger.call(dummy, event);
-  };
-})(this, document);
+  return $;
+})(document);

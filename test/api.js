@@ -1,4 +1,4 @@
-/*globals appendToDom:true, destroyDom:true, $:true*/
+/*globals afterEach: true, describe: true, it: true, expect: true, beforeEach: true, appendToDom:true, destroyDom:true, $:true*/
 'use strict';
 
 describe('api', function () {
