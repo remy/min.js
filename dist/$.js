@@ -2,7 +2,8 @@
 (function (global, document) {
   var element = Element.prototype,
       nodeList = NodeList.prototype,
-      forEach = [].forEach;
+      forEach = [].forEach,
+      dummy = document.createElement();
 
   nodeList.forEach = forEach;
 
@@ -39,5 +40,13 @@
     var r = document.querySelectorAll(s || '☺'),
         length = r.length;
     return length == 1 ? r[0] : !length ? nodeList : r;
+  };
+
+  global.$.on = function (event, fn) {
+    return element.on.call(dummy, event, fn);
+  };
+
+  global.$.trigger = function (event) {
+    return element.trigger.call(dummy, event);
   };
 })(this, document);
