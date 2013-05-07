@@ -57,6 +57,10 @@ Like jQuery, this tiny library silently fails when it doesn't match any elements
 
 Inspired by [Andrew Lunny](http://github.com/alunny)'s [slide](http://youtu.be/ssR7SKJfcG4?t=20m14s).
 
+# Further libraries / reading
+
+I've started using this library in conjunction with some [microlibraries](https://github.com/remy/libraries) that I've written for data binding and XHR.
+
 # License
 
 MIT / http://rem.mit-license.org
