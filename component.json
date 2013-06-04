@@ -1,14 +1,14 @@
 {
-  "name": "min.js",
+  "name": "min",
   "version": "0.0.3",
   "author": "Remy Sharp",
   "description": "Super minimal selector and event library.",
   "homepage": "https://github.com/remy/min.js",
-  "main": "./dist/$.js",
+  "main": "dist/$.js",
   "scripts": [
-    "./dist/$.js"
+    "dist/$.js"
   ],
-  "readme": "./README.md",
+  "readme": "README.md",
   "repository": {
     "type": "git",
     "url": "git://github.com/remy/min.js.git"
