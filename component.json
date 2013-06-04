@@ -5,6 +5,9 @@
   "description": "Super minimal selector and event library.",
   "homepage": "https://github.com/remy/min.js",
   "main": "./dist/$.js",
+  "scripts": [
+    "./dist/$.js"
+  ],
   "readme": "./README.md",
   "repository": {
     "type": "git",
