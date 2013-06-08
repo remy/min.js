@@ -29,6 +29,14 @@ $('a').on('foo', function () {
 $('a:first-child').trigger('foo');
 ```
 
+## Arbitrary events
+
+```js
+$.on('foo', function () {
+  // foo was fired, but doesn't require a selector
+});
+```
+
 ## Looping
 
 ```js
