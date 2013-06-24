@@ -22,6 +22,14 @@ describe('events', function () {
     expect(spy).toHaveBeenCalled();
   });
 
+  it('should assign an event to the window and trigger', function () {
+    window.on('orientation', spy);
+
+    window.trigger('orientation');
+
+    expect(spy).toHaveBeenCalled();
+  });
+
   it('should assign an event to the document', function () {
     document.on('click', spy);
 
