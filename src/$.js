@@ -21,7 +21,7 @@ $ = (function (document, window, $) {
     return this;
   };
 
-  node.trigger = function (type, data) {
+  window[trigger] = node[trigger] = function (type, data) {
     var event = document.createEvent('HTMLEvents');
     event.initEvent(type, true, true);
     event.data = data || {};
@@ -31,7 +31,7 @@ $ = (function (document, window, $) {
     return this;
   };
 
-  nodeList.trigger = function (event) {
+  nodeList[trigger] = function (event) {
     each.call(this, function (el) {
       el[trigger](event);
     });
@@ -45,7 +45,7 @@ $ = (function (document, window, $) {
   };
 
   $.on = node.on.bind(dummy);
-  $.trigger = node[trigger].bind(dummy);
+  $[trigger] = node[trigger].bind(dummy);
 
   return $;
 })(document, this);
