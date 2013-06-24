@@ -1,4 +1,6 @@
-# Features
+# min.js
+
+A super tiny JavaScript library to execute simple DOM querying and hooking event listeners. Aims to return the raw DOM node for you to manipulate directly, using HTML5 (et al) tech like `element.classList` or `element.innerHTML`, etc.
 
 ## Query elements
 
@@ -67,14 +69,8 @@ $('a').href = '/some-place.html';
 
 Like jQuery, this tiny library silently fails when it doesn't match any elements. As you might expect.
 
-# Thanks
+# More info
 
-Inspired by [Andrew Lunny](http://github.com/alunny)'s [slide](http://youtu.be/ssR7SKJfcG4?t=20m14s).
-
-# Further libraries / reading
-
-I've started using this library in conjunction with some [microlibraries](https://github.com/remy/libraries) that I've written for data binding and XHR.
-
-# License
-
-MIT / http://rem.mit-license.org
+* Special thanks and inspired by [Andrew Lunny](http://github.com/alunny)'s [slide](http://youtu.be/ssR7SKJfcG4?t=20m14s).
+* I've started using this library in conjunction with some [microlibraries](https://github.com/remy/libraries) that I've written for data binding and XHR.
+* License: MIT / http://rem.mit-license.org
