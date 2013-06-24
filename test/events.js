@@ -22,6 +22,14 @@ describe('events', function () {
     expect(spy).toHaveBeenCalled();
   });
 
+  it('should assign an event to the document', function () {
+    document.on('click', spy);
+
+    document.trigger('click');
+
+    expect(spy).toHaveBeenCalled();
+  });
+
   it('should not trigger an event on a non-element', function () {
     $('.this-isnt-on-the-dom').on('event', spy);
 

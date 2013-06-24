@@ -13,7 +13,7 @@ If there is more than one link, the return value is `NodeList`, if there's only 
       // do something else
     });
 
-Note: the `on` and `trigger` methods are on both `Element` objects and `NodeList` objects.
+Note: the `on` and `trigger` methods are on both `Node` objects and `NodeList` objects, which also means this affects the `document` node, so `document.on(type, callback)` will also work.
 
 ## Custom events
 

@@ -1,6 +1,6 @@
-/*globals Element:true, NodeList:true*/
+/*globals Node:true, NodeList:true*/
 $ = (function (document, $) {
-  var element = Element.prototype,
+  var node = Node.prototype,
       nodeList = NodeList.prototype,
       forEach = 'forEach',
       trigger = 'trigger',
@@ -9,7 +9,7 @@ $ = (function (document, $) {
 
   nodeList[forEach] = each;
 
-  element.on = function (event, fn) {
+  node.on = function (event, fn) {
     this.addEventListener(event, fn, false);
     return this;
   };
@@ -21,7 +21,7 @@ $ = (function (document, $) {
     return this;
   };
 
-  element.trigger = function (type, data) {
+  node.trigger = function (type, data) {
     var event = document.createEvent('HTMLEvents');
     event.initEvent(type, true, true);
     event.data = data || {};
@@ -44,8 +44,8 @@ $ = (function (document, $) {
     return length == 1 ? r[0] : !length ? nodeList : r;
   };
 
-  $.on = element.on.bind(dummy);
-  $.trigger = element[trigger].bind(dummy);
+  $.on = node.on.bind(dummy);
+  $.trigger = node[trigger].bind(dummy);
 
   return $;
 })(document);
