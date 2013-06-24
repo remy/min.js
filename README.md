@@ -41,7 +41,7 @@ $.on('foo', function () {
 
 ### Turning off events?
 
-Current min.js has no support for turning off events (beyond `.removeEventListener` -- but even then you don't have the reference function to work with). Currently there's no plans to implement this (as I find I don't disable events very often at all) -- but I'm not closed to the idea. There's an issue [open](#8), but it adds quite a bit more logic to a very small file. If there's enough ::thumbsup:: on the issue, I'll add it in. Equally, if you think min.js should stay simple, please ::thumbsdown:: -- this is useful too.
+Current min.js has no support for turning off events (beyond `.removeEventListener` -- but even then you don't have the reference function to work with). Currently there's no plans to implement this (as I find I don't disable events very often at all) -- but I'm not closed to the idea. There's an [issue open](https://github.com/remy/min.js/pull/8), but it adds quite a bit more logic to a very small file. If there's enough :thumbsup: on the issue, I'll add it in. Equally, if you think min.js should stay simple, please :thumbsdown: -- this is useful too.
 
 ## Looping
 
