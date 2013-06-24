@@ -1,6 +1,6 @@
 {
   "name": "min",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "author": "Remy Sharp",
   "description": "Super minimal selector and event library.",
   "homepage": "https://github.com/remy/min.js",
