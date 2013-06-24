@@ -1,5 +1,5 @@
 /*globals Node:true, NodeList:true*/
-$ = (function (document, $) {
+$ = (function (document, window, $) {
   var node = Node.prototype,
       nodeList = NodeList.prototype,
       forEach = 'forEach',
@@ -9,7 +9,7 @@ $ = (function (document, $) {
 
   nodeList[forEach] = each;
 
-  node.on = function (event, fn) {
+  window.on = node.on = function (event, fn) {
     this.addEventListener(event, fn, false);
     return this;
   };
@@ -48,4 +48,4 @@ $ = (function (document, $) {
   $.trigger = node[trigger].bind(dummy);
 
   return $;
-})(document);
+})(document, this);
