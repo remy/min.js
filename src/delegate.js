@@ -8,4 +8,6 @@ Node.prototype.delegate = function (selector, event, fn) {
       fn.call(event.target, event);
     }
   });
+  
+  return this;
 };
