@@ -1,0 +1,15 @@
+{
+  "framework": "mocha",
+  "src_files": [
+    "src/$.js",
+    "test/lib/assert.js",
+    "test/spec/helpers.js",
+    "test/spec/api.js",
+    "test/spec/chaining.js"
+  ],
+  "launch_in_dev": [
+    "Chrome",
+    "Safari",
+    "Firefox"
+  ]
+}
