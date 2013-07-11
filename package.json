@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "comment": "note: this test is for travis, to test properly, use karma start karma.conf.js",
-    "test": "./node_modules/.bin/karma start --browsers Firefox --single-run",
+    "test": "./node_modules/.bin/karma start --browsers Firefox --single-run"
   },
   "devDependencies": {
     "sinon": "~1.7.3",
