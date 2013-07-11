@@ -4,11 +4,11 @@
 describe('api', function () {
   describe('no selector', function () {
     it('should return on method', function () {
-      expect(typeof $.on).toEqual('function');
+      assert(typeof $.on === 'function');
     });
 
     it('should return trigger method', function () {
-      expect(typeof $.trigger).toEqual('function');
+      assert(typeof $.trigger === 'function');
     });
   });
 
@@ -16,11 +16,11 @@ describe('api', function () {
     var $empty = $('');
 
     it('should return on method', function () {
-      expect(typeof $empty.on).toEqual('function');
+      assert(typeof $empty.on === 'function');
     });
 
     it('should return trigger method', function () {
-      expect(typeof $empty.trigger).toEqual('function');
+      assert(typeof $empty.trigger === 'function');
     });
   });
 
@@ -36,11 +36,11 @@ describe('api', function () {
     afterEach(destroyDom);
 
     it('should return on method', function () {
-      expect(typeof $link.on).toEqual('function');
+      assert(typeof $link.on === 'function');
     });
 
     it('should return trigger method', function () {
-      expect(typeof $link.trigger).toEqual('function');
+      assert(typeof $link.trigger === 'function');
     });
   });
 });

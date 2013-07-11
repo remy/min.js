@@ -5,7 +5,7 @@ describe('events', function () {
   var spy;
 
   beforeEach(function () {
-    spy = jasmine.createSpy();
+    spy = sinon.spy();
   })
 
   afterEach(function () {
@@ -19,7 +19,7 @@ describe('events', function () {
 
     $body.trigger('click');
 
-    expect(spy).toHaveBeenCalled();
+    sinon.assert.called(spy);
   });
 
   it('should assign an event to the window and trigger', function () {
@@ -27,7 +27,7 @@ describe('events', function () {
 
     window.trigger('orientation');
 
-    expect(spy).toHaveBeenCalled();
+    sinon.assert.called(spy);
   });
 
   it('should assign an event to the document', function () {
@@ -35,7 +35,7 @@ describe('events', function () {
 
     document.trigger('click');
 
-    expect(spy).toHaveBeenCalled();
+    sinon.assert.called(spy);
   });
 
   it('should not trigger an event on a non-element', function () {
@@ -43,7 +43,7 @@ describe('events', function () {
 
     $('.this-isnt-on-the-dom').trigger('event');
 
-    expect(spy).not.toHaveBeenCalled();
+    sinon.assert.notCalled(spy);
   });
 
   it('should assign an event to the internal element', function () {
@@ -51,6 +51,6 @@ describe('events', function () {
 
     $.trigger('event');
 
-    expect(spy).toHaveBeenCalled();
+    sinon.assert.called(spy);
   });
 });

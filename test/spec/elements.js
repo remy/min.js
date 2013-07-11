@@ -11,6 +11,6 @@ describe('elements', function () {
   it('should grab an element from the DOM', function () {
     var link = $('div > a');
 
-    expect(link.outerHTML).toEqual('<a></a>')
+    assert(link.outerHTML === '<a></a>');
   });
 });

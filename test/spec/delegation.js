@@ -4,7 +4,7 @@
 describe('delegation', function () {
   var $section,
       $article,
-      spy = jasmine.createSpy();
+      spy = sinon.spy();
 
   beforeEach(function () {
     appendToDom('section', ['article']);
@@ -26,7 +26,7 @@ describe('delegation', function () {
 
     $article.trigger('event');
 
-    expect(spy).toHaveBeenCalled();
-    expect(target).toEqual($article);
+    assert(spy.called);
+    assert(target === $article);
   });
 });

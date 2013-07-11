@@ -24,20 +24,36 @@ if (!Function.prototype.bind) {
   };
 }
 
-var appendToDom = function (tag, children) {
-  var container = document.createElement(tag);
+(function (global) {
+  var ready = false;
+  var sandbox = document.createElement('div');
 
-  if (children.length) {
-    children.forEach(function (childTag) {
-      container.appendChild(document.createElement(childTag));
-    });
+  function setup() {
+    sandbox.style.visibilty = 'hidden';
+    sandbox.style.position = 'absolute';
+    sandbox.style.top = '-999999px';
+    sandbox.style.zIndex = '-1';
+    document.body.appendChild(sandbox);
+    ready = true;
   }
 
-  document.body.appendChild(container);
-};
+  global.appendToDom = function (tag, children) {
+    if (!ready) setup();
+    var container = document.createElement(tag);
 
-var destroyDom = function () {
-  document.body.innerHTML = '';
-};
+    if (children.length) {
+      children.forEach(function (childTag) {
+        container.appendChild(document.createElement(childTag));
+      });
+    }
+
+    sandbox.appendChild(container);
+  };
+
+  global.destroyDom = function () {
+    if (ready) sandbox.innerHTML = '';
+  };
+
+})(this);
 
 var noop = function () {};
