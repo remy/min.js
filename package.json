@@ -1,6 +1,6 @@
 {
   "name": "min.js",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Remy Sharp",
   "dependencies": {
     "grunt": "~0.4.1",
