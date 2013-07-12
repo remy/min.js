@@ -2,7 +2,7 @@
 $ = (function (document, window, $) {
   // Node covers all elements, but also the document objects
   var node = Node.prototype,
-      nodeList = NodeList.__proto__ || NodeList.prototype,
+      nodeList = NodeList.prototype,
       forEach = 'forEach',
       trigger = 'trigger',
       each = [][forEach],
@@ -57,7 +57,7 @@ $ = (function (document, window, $) {
     // if we have a single element, just return that.
     // if there's no matched elements, return a nodeList to chain from
     // else return the NodeList collection from qSA
-    return length == 1 ? r[0] : !length ? nodeList : r;
+    return length == 1 ? r[0] : r;
   };
 
   // $.on and $.trigger allow for pub/sub type global
