@@ -54,6 +54,20 @@ describe('events', function () {
     sinon.assert.called(spy);
   });
 
+  describe('on multiple elements', function () {
+    beforeEach(function () {
+      appendToDom('div', ['a', 'a']);
+    });
+
+    afterEach(destroyDom);
+
+    it('should trigger', function () {
+      $('div > a').on('click', spy).trigger('click');
+      sinon.assert.calledTwice(spy);
+    });
+
+  });
+
   describe('addEventListener events', function () {
     beforeEach(function () {
       appendToDom('div', ['a']);

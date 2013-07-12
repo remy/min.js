@@ -21,7 +21,7 @@ $ = (function (document, window, $) {
   };
 
   nodeList.on = function (event, fn) {
-    each.call(this, function (el) {
+    this[forEach](function (el) {
       el.on(event, fn);
     });
     return this;
@@ -43,7 +43,7 @@ $ = (function (document, window, $) {
   };
 
   nodeList[trigger] = function (event) {
-    each.call(this, function (el) {
+    this[forEach](function (el) {
       el[trigger](event);
     });
     return this;
