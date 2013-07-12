@@ -17,14 +17,13 @@ module.exports = function (grunt) {
       options: {
         configFile: 'karma.conf.js',
         runnerPort: 9999,
-        browsers: ['Firefox']
-      },
-      all: {
         browsers: ['Firefox', 'Chrome', 'Safari', 'Opera']
       },
+      all: {
+
+      },
       build: {
-        singleRun: true,
-        browsers: ['phantomjs']
+        singleRun: true
       }
     },
 
