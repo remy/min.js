@@ -4,10 +4,11 @@
 describe('delegation', function () {
   var $section,
       $article,
-      spy = sinon.spy();
+      spy;
 
   beforeEach(function () {
-    appendToDom('section', ['article']);
+    spy = sinon.spy();
+    appendToDom('section', ['article', 'a', 'a']);
 
     $section = $('section');
     $article = $('section > article');
@@ -28,5 +29,17 @@ describe('delegation', function () {
 
     assert(spy.called);
     assert(target === $article);
+  });
+
+  it('should trigger click event using event delegation', function () {
+    $('body').delegate('section > a', 'click', spy);
+    $('section > a')[0].trigger('click');
+
+    assert(spy.called);
+    $('section > a')[0].trigger('click');
+    assert(spy.calledTwice);
+
+    $('section > a')[1].trigger('click');
+    assert(spy.calledThrice);
   });
 });

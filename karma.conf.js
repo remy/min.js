@@ -13,6 +13,7 @@ files = [
   'test/lib/assert.js',
   'test/lib/sinon.js',
   'src/$.js',
+  'src/delegate.js',
   'test/spec/helpers.js',
   'test/spec/*.js'
 ];
