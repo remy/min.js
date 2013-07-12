@@ -2,6 +2,8 @@
 
 A super tiny JavaScript library to execute simple DOM querying and hooking event listeners. Aims to return the raw DOM node for you to manipulate directly, using HTML5 (et al) tech like `element.classList` or `element.innerHTML`, etc.
 
+[![Build Status](https://travis-ci.org/remy/min.js.png?branch=master)](https://travis-ci.org/remy/min.js)
+
 ## Query elements
 
 ```js
