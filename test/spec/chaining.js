@@ -15,11 +15,17 @@ describe('chaining', function () {
   // left in, note that Firefox does not support empty selectors
   describe('unmatched selector', function () {
     it('should return trigger method from on', function () {
-      assert(typeof $('').on('event', noop).trigger === 'function');
+      assert(typeof $('unmatched').on('event', noop).trigger === 'function');
     });
 
     it('should return on method from trigger', function () {
-      assert(typeof $('').on('event', noop).trigger('event').on === 'function');
+      assert(typeof $('unmatched').on('event', noop).trigger('event').on === 'function');
+    });
+  });
+
+  describe('empty selector', function () {
+    it('should still allow for chained methods', function () {
+      assert(typeof $('').on('event', noop).trigger === 'function');
     });
   });
 

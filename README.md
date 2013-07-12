@@ -48,10 +48,12 @@ Current min.js has no support for turning off events (beyond `.removeEventListen
 ## Looping
 
 ```js
-$('p').forEach(function (el) {
+$('p').forEach(function (el, index) {
   console.log(el.innerHTML);
 });
 ```
+
+Note: jQuery-like libraries tend to make the context `this` the element. Since we're borrowing `forEach` from the array object, `this` does not refer to the element.
 
 ## Chaining events
 

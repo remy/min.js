@@ -53,4 +53,18 @@ describe('events', function () {
 
     sinon.assert.called(spy);
   });
+
+  describe('addEventListener events', function () {
+    beforeEach(function () {
+      appendToDom('div', ['a']);
+    });
+
+    afterEach(destroyDom);
+
+    it('should trigger', function () {
+      $('div > a').addEventListener('click', spy);
+      $('div > a').trigger('click');
+      sinon.assert.called(spy);
+    });
+  });
 });

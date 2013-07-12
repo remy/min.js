@@ -24,6 +24,36 @@ describe('api', function () {
     });
   });
 
+  describe('iterator', function () {
+    var $link;
+
+    beforeEach(function () {
+      appendToDom('section', ['a', 'a', 'a']);
+
+      $link = $('section > a');
+    });
+
+    afterEach(destroyDom);
+
+    it('should have forEach', function () {
+      assert(typeof $link.forEach === 'function');
+    });
+
+    it('should loop', function () {
+      var ctr = 0;
+      $link.forEach(function () {
+        ctr++;
+      });
+      assert(ctr === 3);
+    });
+
+    it('should have each element passed to iterator', function () {
+      $link.forEach(function (el, i) {
+        assert(el === $link[i]);
+      });
+    });
+  });
+
   describe('matched selector', function () {
     var $link;
 
