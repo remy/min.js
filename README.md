@@ -2,6 +2,8 @@
 
 A super tiny JavaScript library to execute simple DOM querying and hooking event listeners. Aims to return the raw DOM node for you to manipulate directly, using HTML5 (et al) tech like `element.classList` or `element.innerHTML`, etc.
 
+[![Flattr this](http://api.flattr.com/button/flattr-badge-large.png)](http://flattr.com/thing/1268688/remymin-js-on-GitHub)
+
 [![Build Status](https://travis-ci.org/remy/min.js.png?branch=master)](https://travis-ci.org/remy/min.js)
 
 ## Query elements
